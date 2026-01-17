@@ -1,0 +1,9 @@
+{
+    "memory_file": "chat_memory.json",
+    "plugin_dir": "plugins",
+    "default_user_id": "default",
+    "api_keys": {
+        "weather": "YOUR_OPENWEATHERMAP_KEY_HERE",
+        "news": "399730edfc0c4aceac0dfb7eb680e5eb"
+    }
+}
