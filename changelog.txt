@@ -1,0 +1,74 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+
+## [1.5.0] - 2025-09-09
+### Added
+- **GUI: System Tray Integration**: The GUI application now features a system tray icon, indicating that the bot is running in the background.
+- **GUI: Context Menu**: Right-clicking the tray icon provides a menu with quick actions: Show/Hide, Reload Plugins, Settings (placeholder), and Quit.
+- **GUI: Native Desktop Notifications**: Reminders and webhook events now trigger native desktop pop-up notifications for better visibility.
+
+### Changed
+- **GUI: Hide on Close**: Closing the main GUI window with the 'X' button now minimizes the application to the system tray instead of quitting.
+
+## [1.4.0]
+### Added
+- **Webhook Listener Plugin**: A powerful plugin that runs a lightweight Flask web server in a background thread to receive real-time notifications from other applications like Sonarr and Radarr.
+- **Service Mode**: The `main.py` script now accepts a `--no-interactive` flag to run the bot as a headless background service.
+- **Deployment Guide**: Instructions were added to the README for deploying the bot as a persistent Windows Service using NSSM.
+
+## [1.3.0]
+### Added
+- **Graphical User Interface (GUI)**: A full GUI was created using PyQt6, providing a user-friendly way to interact with the bot. Launched with the `--gui` command-line argument.
+- **Event Emitter System**: A new `events.py` file was added to create a thread-safe messaging system (`MessageEmitter`) for communication between background threads (scheduler, webhooks) and the main UI thread.
+
+## [1.2.0]
+### Added
+- **Automated Testing Suite**: A `tests/` directory was added with a suite of tests using `pytest` to ensure the stability of the core application and key plugins.
+- **Test Fixture**: A pytest fixture was created to provide a clean, isolated instance of the bot for each test.
+
+### Fixed
+- Corrected a command processing logic bug in `core.py` where plugin commands were being ignored.
+- Updated tests to match the enhanced, more descriptive output of modern plugins.
+
+## [1.1.0]
+### Added
+- **Plugin Interoperability**: A shared "services" registry was added to the core bot, allowing plugins to register and use functions from one another.
+- **Centralized API Key Management**: API keys were moved from individual plugin files into a central `config.json` for better security and management.
+
+### Changed
+- The `todo_plugin` was upgraded to use the `datetime_plugin`'s date parsing service, enabling it to understand relative dates (e.g., "tomorrow") and automatically schedule persistent reminders.
+
+## [1.0.0]
+### Added
+- **Persistent Scheduling**: Replaced the in-memory schedule with a persistent **SQLite database** (`database.py`), ensuring reminders and events are not lost when the bot restarts.
+- **Proactive Scheduler Thread**: Implemented a "heartbeat" in `main.py` using a background thread to actively monitor the database for due events.
+
+### Changed
+- **Major Architectural Refactor**: The project was split from a single `chatbot.py` script into a professional multi-file structure:
+    - `core.py`: For the main application engine and classes.
+    - `main.py`: For the application entry point and run loops.
+    - `utils.py`: For shared configuration and logging.
+
+## [0.5.0]
+### Added
+- **Proactive Assistant Plugin**: The `assistant_plugin` was created, featuring a `!briefing` command that summarizes weather, to-dos, and notes, giving the bot its first proactive capability.
+
+## [0.4.0]
+### Added
+- User-enhanced, feature-rich plugins for To-Do (v2), Notes (v2), Calculator (v2), Datetime (v2), and Wiki (v2), adding significant functionality.
+
+## [0.3.0]
+### Added
+- Initial **PluginManager** and a modular plugin architecture.
+- First set of basic plugins: Weather, News, Jokes, and an initial Calculator/Datetime.
+
+## [0.2.0]
+### Changed
+- Refactored the core conversational logic (`generate_response` and `extract_knowledge`) from a series of `if/else` statements to a more scalable, data-driven, intent-based system.
+
+## [0.1.0]
+### Added
+- Initial version of the project as a single `chatbot.py` script.
+- Basic command handling (`!help`, `!clear`) and regex-based knowledge extraction.
+- In-memory conversation history and knowledge.

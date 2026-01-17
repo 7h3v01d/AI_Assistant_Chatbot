@@ -1,0 +1,6 @@
+pyqt6
+wikipedia-api
+requests
+pytz
+flask
+beautifulsoup4
