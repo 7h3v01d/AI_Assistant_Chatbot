@@ -1,0 +1,17 @@
+(venv) PS E:\Projects\Taskbot_Assistant\src> pytest tests\ -v
+======================================================================================================================== test session starts ========================================================================================================================
+platform win32 -- Python 3.11.5, pytest-8.4.2, pluggy-1.6.0 -- E:\Projects\Taskbot_Assistant\venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: E:\Projects\Taskbot_Assistant\src
+collected 7 items
+
+tests/test_core.py::test_bot_initialization PASSED                                                                                                                                                                                                             [ 14%]
+tests/test_core.py::test_default_command_help PASSED                                                                                                                                                                                                           [ 28%]
+tests/test_core.py::test_knowledge_extraction PASSED                                                                                                                                                                                                           [ 42%]
+tests/test_core.py::test_plugin_loading PASSED                                                                                                                                                                                                                 [ 57%]
+tests/test_plugins.py::test_todo_plugin_add_and_list PASSED                                                                                                                                                                                                    [ 71%]
+tests/test_plugins.py::test_calculator_plugin_simple_math PASSED                                                                                                                                                                                               [ 85%]
+tests/test_plugins.py::test_datetime_plugin_set_and_check_timezone PASSED                                                                                                                                                                                      [100%]
+
+========================================================================================================================= 7 passed in 0.40s =========================================================================================================================
+(venv) PS E:\Projects\Taskbot_Assistant\src> 

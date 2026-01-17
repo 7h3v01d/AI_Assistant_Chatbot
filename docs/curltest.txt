@@ -1,0 +1,1 @@
+curl -X POST -H "Content-Type: application/json" -d "{\"movie\": {\"title\": \"The Matrix\"}}" http://localhost:5001/webhook

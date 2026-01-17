@@ -1,0 +1,32 @@
+
+
+Install the Service with NSSM
+Download NSSM: Go to the NSSM website and download the latest version. Extract the nssm.exe file (from the win64 folder) 
+into a memorable location, like C:\NSSM.
+
+Open PowerShell as an Administrator.
+
+Navigate to the NSSM folder: cd C:\NSSM
+
+Run the NSSM installer GUI: ./nssm.exe install MyChatBot
+
+Configure the Service: A window will pop up.
+
+Application Tab:
+
+Path: Browse to your virtual environment's python.exe. It will be something like E:\Projects\Taskbot_Assistant\venv\Scripts\python.exe.
+
+Startup directory: Browse to your project's source folder, E:\Projects\Taskbot_Assistant\src.
+
+Arguments: This is the crucial part. Enter main.py --no-interactive.
+
+Click the Install service button.
+
+Start Your Service: In the same Administrator PowerShell, run: ./nssm.exe start MyChatBot
+
+That's it! Your bot is now running as a permanent Windows service. It will start on boot and run silently in the background, 
+listening for webhooks and firing reminders, without you needing to do anything. You can check the chatbot.log file to see its activity.
+
+
+to restart server 
+./nssm restart MyChatBot
