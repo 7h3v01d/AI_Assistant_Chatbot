@@ -3,6 +3,23 @@
 A powerful, extensible, and persistent AI assistant chatbot built in Python. This project evolved from a single script into a multi-threaded, modular application capable of managing tasks, providing real-time information, and integrating with other services, complete with a full graphical user interface.
 
 ---
+
+⚠️ **LICENSE & USAGE NOTICE — READ FIRST**
+
+This repository is **source-available for private technical evaluation and testing only**.
+
+- ❌ No commercial use  
+- ❌ No production use  
+- ❌ No academic, institutional, or government use  
+- ❌ No research, benchmarking, or publication  
+- ❌ No redistribution, sublicensing, or derivative works  
+- ❌ No independent development based on this code  
+
+All rights remain exclusively with the author.  
+Use of this software constitutes acceptance of the terms defined in **LICENSE.txt**.
+
+---
+
 ## Features
 
 * **✨ Graphical User Interface (GUI)**: A clean and user-friendly interface built with PyQt6.
@@ -151,3 +168,28 @@ To make the bot a permanent, "always-on" fixture on your Windows machine, use **
     C:\NSSM\nssm.exe start MyChatBot
     ```
 The bot will now run silently in the background. All its activity will be recorded in `chatbot.log`.
+
+## Contribution Policy
+
+Feedback, bug reports, and suggestions are welcome.
+
+You may submit:
+
+- Issues
+- Design feedback
+- Pull requests for review
+
+However:
+
+- Contributions do not grant any license or ownership rights
+- The author retains full discretion over acceptance and future use
+- Contributors receive no rights to reuse, redistribute, or derive from this code
+
+---
+
+## License
+This project is not open-source.
+
+It is licensed under a private evaluation-only license.
+See LICENSE.txt for full terms.
+
